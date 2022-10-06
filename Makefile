@@ -13,7 +13,7 @@ createdb:
 	docker exec -it postgres createdb --username=root --owner=root simple_bank
 
 dropdb:
-	docker exec -it postgres dropdb simple_bank
+	docker exec -it postgres dropdb --username=postgres simple_bank
 
 migrateup:
 	migrate -path db/migration -database "$(DB_URL)" -verbose up
